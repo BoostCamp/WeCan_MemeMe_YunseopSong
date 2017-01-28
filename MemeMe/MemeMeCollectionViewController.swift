@@ -35,15 +35,18 @@ class MemeMeCollectionViewController: UICollectionViewController {
         super.viewWillAppear(true)
 
     }
-
+    
+    // 컬렌션 뷰 섹션 수 설정
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
+    // 컬렉션 뷰 셀 갯수 설정
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count
     }
-
+    
+    // 컬렉션 뷰 셀 설정
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeMeCollectionCell", for: indexPath) as! MemeMeCollectionViewCell
         
@@ -54,10 +57,13 @@ class MemeMeCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    // 컬렉션 뷰 셀 선택 이벤트 핸들러
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showMeme", sender: indexPath.row)
     }
     
+    // segue에 Meme index 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMeme" {
             let MemeImageVC = segue.destination as! MemeImageViewController

@@ -10,8 +10,10 @@ import UIKit
 
 
 class MemeMeCollectionViewController: UICollectionViewController {
-
+    // memes 배열 선언
     var memes: [Meme]!
+    
+    // Flow Layout
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 
     override func viewDidLoad() {

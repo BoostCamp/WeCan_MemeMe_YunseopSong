@@ -14,7 +14,6 @@ class MemeImageViewController: UIViewController {
     var memes: [Meme]!
 
     @IBOutlet weak var MemeImageView: UIImageView!
-    @IBOutlet weak var editButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
